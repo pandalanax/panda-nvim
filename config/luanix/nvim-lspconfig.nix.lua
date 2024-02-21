@@ -12,6 +12,8 @@ require("nvim-autopairs").setup {}
 local cmp = require('cmp')
 local luasnip = require('luasnip')
 
+nvim_lsp.lemminx.setup{}
+
 -- add friendly snippets to luasnip https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#add-snippets
 require("luasnip.loaders.from_vscode").lazy_load({
   paths = { "${pkgs.vimPlugins.friendly-snippets}" }

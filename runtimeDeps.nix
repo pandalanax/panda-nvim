@@ -12,5 +12,8 @@
   nixRuntime = with pkgs; [
     nil
   ];
+  xmlRuntime = with pkgs; [
+    lemminx
+  ];
 }
 
