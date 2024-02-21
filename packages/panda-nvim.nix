@@ -5,8 +5,12 @@ let
   plugins = import ../plugins.nix { inherit pkgs;};
   runtimeDeps = import ../runtimeDeps.nix { inherit pkgs; };
 
+  nixDependencies = pkgs.symlinkJoin {
+    name = "nixDependencies";
+    paths = runtimeDeps.nixRuntime;
+  };
   pythonDependencies = pkgs.symlinkJoin {
-    name = "pythonDependencies ";
+    name = "pythonDependencies";
     paths = runtimeDeps.pythonRuntime;
   };
   myNeovimUnwrapped = pkgs.wrapNeovim pkgs.neovim {
@@ -17,7 +21,7 @@ let
   };
 in pkgs.writeShellApplication {
   name = "nvim";
-  runtimeInputs = [ pythonDependencies ];
+  runtimeInputs = [ pythonDependencies nixDependencies];
   text = ''
     ${myNeovimUnwrapped}/bin/nvim "$@"
   '';

@@ -5,6 +5,7 @@ with pkgs.vimPlugins; [
   onedark-nvim # theme
   nvim-lspconfig # everything lsp related
   luasnip
+  vim-nix
   cmp_luasnip # needed for snippets to work in auto complete
   friendly-snippets
   nvim-cmp
@@ -19,5 +20,4 @@ with pkgs.vimPlugins; [
   nvim-treesitter.withAllGrammars # highlighting
   nvim-surround # surround words wit ( " ' or anything really
   vim-fugitive # git inside vim 
-
 ]
