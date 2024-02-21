@@ -10,30 +10,39 @@
       url = "github:neovim/neovim/stable?dir=contrib";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-  };
-  outputs = { self, nixpkgs, neovim }:
-    let
-      overlayFlakeInputs = prev: final: {
-        neovim = neovim.packages.aarch64-darwin.neovim;
-      };
-
-      overlayMyNeovim = prev: final: {
-        myNeovim = import ./packages/panda-nvim.nix {
-          pkgs = final;
-        };
-      };
-
-      pkgs = import nixpkgs {
-        system = "aarch64-darwin";
-        overlays = [ overlayFlakeInputs overlayMyNeovim ];
-      };
-
-    in {
-      packages.aarch64-darwin.default = pkgs.myNeovim;
-      apps.aarch64-darwin.default = {
-        type = "app";
-        program = "${pkgs.myNeovim}/bin/nvim";
-      };
+    flake-utils = {
+      url = "github:numtide/flake-utils";
     };
+  };
+
+  outputs = inputs@{ self, ... }:
+    inputs.flake-utils.lib.eachDefaultSystem (system: 
+      let
+        overlayFlakeInputs = prev: final: {
+          neovim = inputs.neovim.packages.${prev.system}.neovim;
+        };
+
+        overlayMyNeovim = prev: final: {
+          myNeovim = import ./packages/panda-nvim.nix {
+            pkgs = prev;
+          };
+        };
+
+        pkgs = import inputs.nixpkgs {
+          system = system;
+          overlays = [ overlayFlakeInputs overlayMyNeovim ];
+        };
+
+      in {
+        packages = rec {
+          nvim = pkgs.myNeovim;
+          default = nvim;
+        };
+
+        apps = rec {
+          nvim = inputs.flake-utils.lib.mkApp { drv = self.packages.${system}.nvim; };
+          default = nvim;
+        };
+      });
 }
 
