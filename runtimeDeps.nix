@@ -21,6 +21,7 @@
   yamlRuntime = with pkgs; [
     yaml-language-server
     ansible-language-server
+    ansible
     ansible-lint
     yamllint
     nodejs_21

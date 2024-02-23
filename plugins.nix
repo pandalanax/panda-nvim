@@ -16,6 +16,7 @@ with pkgs.vimPlugins; [
   cmp-cmdline
   cmp-cmdline-history
   nvim-autopairs
+  ansible-vim 
 
   nvim-treesitter.withAllGrammars # highlighting
   nvim-surround # surround words wit ( " ' or anything really
