@@ -29,6 +29,10 @@ nvim_lsp.jsonls.setup {
   capabilities = capabilities,
 }
 
+nvim_lsp.yamlls.setup{}
+
+nvim_lsp.docker_compose_language_service.setup{}
+
 cmp.event:on(
   'confirm_done',
   cmp_autopairs.on_confirm_done()

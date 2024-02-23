@@ -12,6 +12,9 @@
   nixRuntime = with pkgs; [
     nil
   ];
+  dockerRuntime = with pkgs; [
+    docker-compose-language-service
+  ];
   xmlRuntime = with pkgs; [
     lemminx
   ];
