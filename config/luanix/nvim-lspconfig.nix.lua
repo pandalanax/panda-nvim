@@ -6,7 +6,7 @@
 local nvim_lsp = require("lspconfig")
 nvim_lsp.jedi_language_server.setup{}
 nvim_lsp.nil_ls.setup{}
-
+nvim_lsp.ansiblels.setup{}
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 require("nvim-autopairs").setup {}
 local cmp = require('cmp')
@@ -21,6 +21,13 @@ require("luasnip.loaders.from_vscode").lazy_load({
 })
 
 luasnip.config.setup {}
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+nvim_lsp.jsonls.setup {
+  capabilities = capabilities,
+}
 
 cmp.event:on(
   'confirm_done',

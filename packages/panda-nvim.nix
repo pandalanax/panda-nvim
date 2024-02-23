@@ -17,6 +17,10 @@ let
     name = "pythonDependencies";
     paths = runtimeDeps.pythonRuntime;
   };
+  yamlDependencies = pkgs.symlinkJoin {
+    name = "yamlDependencies";
+    paths = runtimeDeps.yamlRuntime;
+  };
   myNeovimUnwrapped = pkgs.wrapNeovim pkgs.neovim {
     configure = {
       inherit customRC;
@@ -25,7 +29,7 @@ let
   };
 in pkgs.writeShellApplication {
   name = "nvim";
-  runtimeInputs = [ pythonDependencies nixDependencies xmlDependencies ];
+  runtimeInputs = [ pythonDependencies nixDependencies xmlDependencies yamlDependencies ];
   text = ''
     ${myNeovimUnwrapped}/bin/nvim "$@"
   '';
