@@ -10,8 +10,9 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]]) -- copy to system clipboard
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- replace current word with
-
 vim.opt.smartindent = true
+vim.keymap.set("n", "<C-e>", "<C-d>zz")
+vim.keymap.set("n", "<C-i>", "<C-u>zz")
 
 vim.opt.wrap = false
 
