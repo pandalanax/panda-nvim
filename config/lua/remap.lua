@@ -3,7 +3,8 @@ vim.g.mapleader = " "
 vim.opt.relativenumber = true
 vim.opt.nu = true
 
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) -- project view
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) -- project view 
+vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set("n", "n", "nzzzv") -- keeps cursos in middle when searching
 vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]]) -- copy to system clipboard
