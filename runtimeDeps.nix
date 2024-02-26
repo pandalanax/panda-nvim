@@ -8,6 +8,7 @@
   goRuntime = with pkgs; [
     go
     gopls
+    gofumpt
   ];
   nixRuntime = with pkgs; [
     nil

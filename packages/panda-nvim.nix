@@ -7,6 +7,10 @@
     name = "xmlDependencies";
     paths = runtimeDeps.xmlRuntime;
   };
+  goDependencies = pkgs.symlinkJoin {
+    name = "goDependencies";
+    paths = runtimeDeps.goRuntime;
+  };
   nixDependencies = pkgs.symlinkJoin {
     name = "nixDependencies";
     paths = runtimeDeps.nixRuntime;
@@ -33,7 +37,7 @@
 in
   pkgs.writeShellApplication {
     name = "nvim";
-    runtimeInputs = [pythonDependencies nixDependencies xmlDependencies yamlDependencies dockerDependencies];
+    runtimeInputs = [pythonDependencies goDependencies nixDependencies xmlDependencies yamlDependencies dockerDependencies];
     text = ''
       ${myNeovimUnwrapped}/bin/nvim "$@"
     '';

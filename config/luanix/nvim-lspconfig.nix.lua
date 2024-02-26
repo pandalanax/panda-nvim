@@ -6,6 +6,14 @@
 local nvim_lsp = require("lspconfig")
 nvim_lsp.jedi_language_server.setup{}
 nvim_lsp.nil_ls.setup{}
+nvim_lsp.gopls.setup{
+  settings = {
+    completeUnimported = true,
+    analyses = {
+      unusedparams = true,
+    }
+  }
+}
 nvim_lsp.ansiblels.setup{}
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 require("nvim-autopairs").setup {}
