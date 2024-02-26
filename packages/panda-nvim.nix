@@ -1,9 +1,8 @@
 # packages/myNeovim.nix
-{ pkgs }:
-let
-  customRC = import ../config { inherit pkgs; };
-  plugins = import ../plugins.nix { inherit pkgs;};
-  runtimeDeps = import ../runtimeDeps.nix { inherit pkgs; };
+{pkgs}: let
+  customRC = import ../config {inherit pkgs;};
+  plugins = import ../plugins.nix {inherit pkgs;};
+  runtimeDeps = import ../runtimeDeps.nix {inherit pkgs;};
   xmlDependencies = pkgs.symlinkJoin {
     name = "xmlDependencies";
     paths = runtimeDeps.xmlRuntime;
@@ -31,10 +30,11 @@ let
       packages.all.start = plugins;
     };
   };
-in pkgs.writeShellApplication {
-  name = "nvim";
-  runtimeInputs = [ pythonDependencies nixDependencies xmlDependencies yamlDependencies dockerDependencies];
-  text = ''
-    ${myNeovimUnwrapped}/bin/nvim "$@"
-  '';
-}
+in
+  pkgs.writeShellApplication {
+    name = "nvim";
+    runtimeInputs = [pythonDependencies nixDependencies xmlDependencies yamlDependencies dockerDependencies];
+    text = ''
+      ${myNeovimUnwrapped}/bin/nvim "$@"
+    '';
+  }

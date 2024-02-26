@@ -1,9 +1,9 @@
 # runtimeDeps.nix
-{ pkgs }:
-{
+{pkgs}: {
   pythonRuntime = with pkgs; [
     python311
     python311Packages.jedi-language-server
+    python311Packages.black
   ];
   goRuntime = with pkgs; [
     go
@@ -22,6 +22,8 @@
   ];
   yamlRuntime = with pkgs; [
     yaml-language-server
+    stylua
+    nodePackages.prettier
     ansible-language-server
     ansible
     ansible-lint
@@ -29,4 +31,3 @@
     vscode-langservers-extracted
   ];
 }
- 
