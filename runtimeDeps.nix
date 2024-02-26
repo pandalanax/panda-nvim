@@ -11,6 +11,8 @@
   ];
   nixRuntime = with pkgs; [
     nil
+    alejandra
+    statix
   ];
   dockerRuntime = with pkgs; [
     docker-compose-language-service
@@ -23,9 +25,8 @@
     ansible-language-server
     ansible
     ansible-lint
-    yamllint
     nodejs_21
     vscode-langservers-extracted
   ];
 }
-
+ 

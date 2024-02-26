@@ -1,5 +1,5 @@
 # plugins.nix
-{ pkgs }:
+{pkgs}:
 with pkgs.vimPlugins; [
   telescope-nvim # fuzzy search strings and files
   onedark-nvim # theme
@@ -16,9 +16,10 @@ with pkgs.vimPlugins; [
   cmp-cmdline
   cmp-cmdline-history
   nvim-autopairs
-  ansible-vim 
+  ansible-vim
 
+  conform-nvim
   nvim-treesitter.withAllGrammars # highlighting
   nvim-surround # surround words wit ( " ' or anything really
-  vim-fugitive # git inside vim 
+  vim-fugitive # git inside vim
 ]

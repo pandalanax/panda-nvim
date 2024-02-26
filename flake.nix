@@ -15,34 +15,31 @@
     };
   };
 
-  outputs = inputs@{ self, ... }:
-    inputs.flake-utils.lib.eachDefaultSystem (system: 
-      let
-        overlayFlakeInputs = prev: final: {
-          neovim = inputs.neovim.packages.${prev.system}.neovim;
-        };
+  outputs = inputs @ {self, ...}:
+    inputs.flake-utils.lib.eachDefaultSystem (system: let
+      overlayFlakeInputs = prev: final: {
+        neovim = inputs.neovim.packages.${prev.system}.neovim;
+      };
 
-        overlayMyNeovim = prev: final: {
-          myNeovim = import ./packages/panda-nvim.nix {
-            pkgs = prev;
-          };
+      overlayMyNeovim = prev: final: {
+        myNeovim = import ./packages/panda-nvim.nix {
+          pkgs = prev;
         };
+      };
 
-        pkgs = import inputs.nixpkgs {
-          system = system;
-          overlays = [ overlayFlakeInputs overlayMyNeovim ];
-        };
+      pkgs = import inputs.nixpkgs {
+        system = system;
+        overlays = [overlayFlakeInputs overlayMyNeovim];
+      };
+    in {
+      packages = rec {
+        nvim = pkgs.myNeovim;
+        default = nvim;
+      };
 
-      in {
-        packages = rec {
-          nvim = pkgs.myNeovim;
-          default = nvim;
-        };
-
-        apps = rec {
-          nvim = inputs.flake-utils.lib.mkApp { drv = self.packages.${system}.nvim; };
-          default = nvim;
-        };
-      });
+      apps = rec {
+        nvim = inputs.flake-utils.lib.mkApp {drv = self.packages.${system}.nvim;};
+        default = nvim;
+      };
+    });
 }
-

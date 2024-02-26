@@ -4,7 +4,6 @@ let
   customRC = import ../config { inherit pkgs; };
   plugins = import ../plugins.nix { inherit pkgs;};
   runtimeDeps = import ../runtimeDeps.nix { inherit pkgs; };
-
   xmlDependencies = pkgs.symlinkJoin {
     name = "xmlDependencies";
     paths = runtimeDeps.xmlRuntime;
@@ -17,6 +16,7 @@ let
     name = "pythonDependencies";
     paths = runtimeDeps.pythonRuntime;
   };
+
   yamlDependencies = pkgs.symlinkJoin {
     name = "yamlDependencies";
     paths = runtimeDeps.yamlRuntime;
