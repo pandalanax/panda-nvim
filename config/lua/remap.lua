@@ -3,18 +3,21 @@ vim.g.mapleader = " "
 vim.opt.relativenumber = true
 vim.opt.nu = true
 
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) -- project view 
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) -- project view
 vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set("n", "n", "nzzzv") -- keeps cursos in middle when searching
 vim.keymap.set("n", "N", "Nzzzv")
-vim.keymap.set("n", "<leader>o", "o<Esc>0\"_D")
-vim.keymap.set("n", "<leader>O", "O<Esc>0\"_D")
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]]) -- copy to system clipboard
+vim.keymap.set("n", "<leader>o", 'o<Esc>0"_D')
+vim.keymap.set("n", "<leader>O", 'O<Esc>0"_D')
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]]) -- copy to system clipboard
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- replace current word with
 vim.opt.smartindent = true
 vim.keymap.set("n", "<C-e>", "<C-d>zz")
 vim.keymap.set("n", "<C-i>", "<C-u>zz")
+
+vim.keymap.set("v", "E", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "I", ":m '<-2<CR>gv=gv")
 
 vim.opt.wrap = false
 
