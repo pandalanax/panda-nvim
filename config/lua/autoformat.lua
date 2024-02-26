@@ -7,6 +7,7 @@ conform.setup({
 		yaml = { "prettier" },
 		json = { "prettier" },
 		python = { "black" },
+		xml = { "xmlformat" },
 		-- Use a sub-list to run only the first available formatter
 	},
 	format_on_save = {

@@ -23,6 +23,7 @@
   yamlRuntime = with pkgs; [
     yaml-language-server
     stylua
+    xmlformat
     nodePackages.prettier
     ansible-language-server
     ansible
