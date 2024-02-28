@@ -3,6 +3,8 @@
 with pkgs.vimPlugins; [
   telescope-nvim # fuzzy search strings and files
   onedark-nvim # theme
+  kanagawa-nvim
+  flexoki
   nvim-lspconfig # everything lsp related
   luasnip
   vim-nix

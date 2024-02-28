@@ -13,12 +13,24 @@
     flake-utils = {
       url = "github:numtide/flake-utils";
     };
+    flexoki-src = {
+      url = "github:kepano/flexoki-neovim";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {self, ...}:
     inputs.flake-utils.lib.eachDefaultSystem (system: let
       overlayFlakeInputs = prev: final: {
         neovim = inputs.neovim.packages.${prev.system}.neovim;
+        vimPlugins =
+          final.vimPlugins
+          // {
+            flexoki = import ./packages/vimPlugins/flexoki.nix {
+              src = inputs.flexoki-src;
+              pkgs = prev;
+            };
+          };
       };
 
       overlayMyNeovim = prev: final: {
