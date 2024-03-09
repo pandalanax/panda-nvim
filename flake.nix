@@ -13,6 +13,12 @@
     flake-utils = {
       url = "github:numtide/flake-utils";
     };
+    flake-compat = {
+      # Needed along with default.nix in root to allow nixd lsp to do completions
+      # See: https://github.com/nix-community/nixd/tree/main/docs/examples/flake
+      url = "github:inclyc/flake-compat";
+      flake = false;
+    };
     flexoki-src = {
       url = "github:kepano/flexoki-neovim";
       flake = false;

@@ -4,9 +4,36 @@
 { pkgs }:
 ''
 local nvim_lsp = require("lspconfig")
+local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 nvim_lsp.jedi_language_server.setup{}
-nvim_lsp.nil_ls.setup{}
+require'lspconfig'.nixd.setup{
+
+  capabilities = capbilities,
+  on_attach = function()
+    vim.keymap.set("n", "K", vim.lsp.buf.hover,{ buffer=0 } )
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition,{ buffer=0 } )
+    vim.keymap.set("n", "gi", vim.lsp.buf.implementation,{ buffer=0 } )
+    vim.keymap.set("n", "<leader>df", "<cmd>Telescope diagnostics<cr>",{ buffer=0 } )
+    vim.keymap.set("n", "<leader>rf", "<cmd>Telescope lsp_references<cr>",{ buffer=0 } )
+    vim.keymap.set("n", "<leader>de", vim.diagnostic.goto_next,{ buffer=0 } )
+    vim.keymap.set("n", "<leader>di", vim.diagnostic.goto_prev,{ buffer=0 } )
+    vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename,{ buffer=0 } )
+  end,
+}
 nvim_lsp.gopls.setup{
+  capabilities = capbilities,
+  on_attach = function()
+    vim.keymap.set("n", "K", vim.lsp.buf.hover,{ buffer=0 } )
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition,{ buffer=0 } )
+    vim.keymap.set("n", "gi", vim.lsp.buf.implementation,{ buffer=0 } )
+    vim.keymap.set("n", "<leader>df", "<cmd>Telescope diagnostics<cr>",{ buffer=0 } )
+    vim.keymap.set("n", "<leader>rf", "<cmd>Telescope lsp_references<cr>",{ buffer=0 } )
+    vim.keymap.set("n", "<leader>de", vim.diagnostic.goto_next,{ buffer=0 } )
+    vim.keymap.set("n", "<leader>di", vim.diagnostic.goto_prev,{ buffer=0 } )
+    vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename,{ buffer=0 } )
+  end,
   settings = {
     completeUnimported = true,
     analyses = {
@@ -28,10 +55,19 @@ require("luasnip.loaders.from_vscode").lazy_load({
   --paths = { "/nix/store/3knfdfi64h7kl62bnrx6qfpz95ja22gr-vimplugin-friendly-snippets-2024-02-17/" }
 })
 
-luasnip.config.setup {}
+luasnip.config.setup {
+  capabilities = capabilities,
+  on_attach = function()
+    vim.keymap.set("n", "K", vim.lsp.buf.hover,{ buffer=0 } )
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition,{ buffer=0 } )
+    vim.keymap.set("n", "gi", vim.lsp.buf.implementation,{ buffer=0 } )
+    vim.keymap.set("n", "<leader>df", "<cmd>Telescope diagnostics<cr>",{ buffer=0 } )
+    vim.keymap.set("n", "<leader>de", vim.diagnostic.goto_next,{ buffer=0 } )
+    vim.keymap.set("n", "<leader>di", vim.diagnostic.goto_prev,{ buffer=0 } )
+    vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename,{ buffer=0 } )
+  end,
+}
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 nvim_lsp.jsonls.setup {
   capabilities = capabilities,

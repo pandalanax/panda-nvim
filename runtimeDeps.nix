@@ -11,7 +11,7 @@
     gofumpt
   ];
   nixRuntime = with pkgs; [
-    nil
+    nixd
     alejandra
     statix
   ];
