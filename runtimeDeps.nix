@@ -11,7 +11,8 @@
     gofumpt
   ];
   nixRuntime = with pkgs; [
-    nixd
+    #nixd
+    nil
     alejandra
     statix
   ];
@@ -23,6 +24,7 @@
   ];
   yamlRuntime = with pkgs; [
     yaml-language-server
+    ltex-ls
     stylua
     xmlformat
     nodePackages.prettier

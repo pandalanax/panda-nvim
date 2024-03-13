@@ -8,11 +8,18 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protoc
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 nvim_lsp.jedi_language_server.setup{}
-require'lspconfig'.nixd.setup{
-
+require'lspconfig'.nil_ls.setup{
+  autostart = true,
+  settings = {
+    ['nil'] = {
+      formatting = {
+        command = { "alejandra" },
+      },
+    },
+  },
   capabilities = capbilities,
   on_attach = function()
-    vim.keymap.set("n", "K", vim.lsp.buf.hover,{ buffer=0 } )
+    vim.keymap.set("n", "k", vim.lsp.buf.hover,{ buffer=0 } )
     vim.keymap.set("n", "gd", vim.lsp.buf.definition,{ buffer=0 } )
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation,{ buffer=0 } )
     vim.keymap.set("n", "<leader>df", "<cmd>Telescope diagnostics<cr>",{ buffer=0 } )
@@ -25,7 +32,7 @@ require'lspconfig'.nixd.setup{
 nvim_lsp.gopls.setup{
   capabilities = capbilities,
   on_attach = function()
-    vim.keymap.set("n", "K", vim.lsp.buf.hover,{ buffer=0 } )
+    vim.keymap.set("n", "k", vim.lsp.buf.hover,{ buffer=0 } )
     vim.keymap.set("n", "gd", vim.lsp.buf.definition,{ buffer=0 } )
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation,{ buffer=0 } )
     vim.keymap.set("n", "<leader>df", "<cmd>Telescope diagnostics<cr>",{ buffer=0 } )
@@ -35,13 +42,48 @@ nvim_lsp.gopls.setup{
     vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename,{ buffer=0 } )
   end,
   settings = {
-    completeUnimported = true,
+    completeunimported = true,
     analyses = {
       unusedparams = true,
     }
   }
 }
-nvim_lsp.ansiblels.setup{}
+nvim_lsp.ansiblels.setup{
+
+  capabilities = capbilities,
+  on_attach = function()
+    vim.keymap.set("n", "k", vim.lsp.buf.hover,{ buffer=0 } )
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition,{ buffer=0 } )
+    vim.keymap.set("n", "gi", vim.lsp.buf.implementation,{ buffer=0 } )
+    vim.keymap.set("n", "<leader>df", "<cmd>Telescope diagnostics<cr>",{ buffer=0 } )
+    vim.keymap.set("n", "<leader>rf", "<cmd>Telescope lsp_references<cr>",{ buffer=0 } )
+    vim.keymap.set("n", "<leader>de", vim.diagnostic.goto_next,{ buffer=0 } )
+    vim.keymap.set("n", "<leader>di", vim.diagnostic.goto_prev,{ buffer=0 } )
+    vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename,{ buffer=0 } )
+  end,
+}
+
+require'lspconfig'.ltex.setup{
+ settings = {
+		ltex = {
+			language = "en-GB",
+		},
+	},
+
+  capabilities = capbilities,
+  on_attach = function()
+    vim.keymap.set("n", "k", vim.lsp.buf.hover,{ buffer=0 } )
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition,{ buffer=0 } )
+    vim.keymap.set("n", "gi", vim.lsp.buf.implementation,{ buffer=0 } )
+    vim.keymap.set("n", "<leader>df", "<cmd>Telescope diagnostics<cr>",{ buffer=0 } )
+    vim.keymap.set("n", "<leader>rf", "<cmd>Telescope lsp_references<cr>",{ buffer=0 } )
+    vim.keymap.set("n", "<leader>de", vim.diagnostic.goto_next,{ buffer=0 } )
+    vim.keymap.set("n", "<leader>di", vim.diagnostic.goto_prev,{ buffer=0 } )
+    vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename,{ buffer=0 } )
+  end,
+
+}
+
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 require("nvim-autopairs").setup {}
 local cmp = require('cmp')
