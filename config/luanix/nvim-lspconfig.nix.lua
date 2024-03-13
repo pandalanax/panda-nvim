@@ -24,8 +24,8 @@ require'lspconfig'.nil_ls.setup{
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation,{ buffer=0 } )
     vim.keymap.set("n", "<leader>df", "<cmd>Telescope diagnostics<cr>",{ buffer=0 } )
     vim.keymap.set("n", "<leader>rf", "<cmd>Telescope lsp_references<cr>",{ buffer=0 } )
-    vim.keymap.set("n", "<leader>de", vim.diagnostic.goto_next,{ buffer=0 } )
-    vim.keymap.set("n", "<leader>di", vim.diagnostic.goto_prev,{ buffer=0 } )
+    vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next,{ buffer=0 } )
+    vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev,{ buffer=0 } )
     vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename,{ buffer=0 } )
   end,
 }
@@ -37,8 +37,8 @@ nvim_lsp.gopls.setup{
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation,{ buffer=0 } )
     vim.keymap.set("n", "<leader>df", "<cmd>Telescope diagnostics<cr>",{ buffer=0 } )
     vim.keymap.set("n", "<leader>rf", "<cmd>Telescope lsp_references<cr>",{ buffer=0 } )
-    vim.keymap.set("n", "<leader>de", vim.diagnostic.goto_next,{ buffer=0 } )
-    vim.keymap.set("n", "<leader>di", vim.diagnostic.goto_prev,{ buffer=0 } )
+    vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next,{ buffer=0 } )
+    vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev,{ buffer=0 } )
     vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename,{ buffer=0 } )
   end,
   settings = {
@@ -57,8 +57,8 @@ nvim_lsp.ansiblels.setup{
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation,{ buffer=0 } )
     vim.keymap.set("n", "<leader>df", "<cmd>Telescope diagnostics<cr>",{ buffer=0 } )
     vim.keymap.set("n", "<leader>rf", "<cmd>Telescope lsp_references<cr>",{ buffer=0 } )
-    vim.keymap.set("n", "<leader>de", vim.diagnostic.goto_next,{ buffer=0 } )
-    vim.keymap.set("n", "<leader>di", vim.diagnostic.goto_prev,{ buffer=0 } )
+    vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next,{ buffer=0 } )
+    vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev,{ buffer=0 } )
     vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename,{ buffer=0 } )
   end,
 }
@@ -77,8 +77,8 @@ require'lspconfig'.ltex.setup{
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation,{ buffer=0 } )
     vim.keymap.set("n", "<leader>df", "<cmd>Telescope diagnostics<cr>",{ buffer=0 } )
     vim.keymap.set("n", "<leader>rf", "<cmd>Telescope lsp_references<cr>",{ buffer=0 } )
-    vim.keymap.set("n", "<leader>de", vim.diagnostic.goto_next,{ buffer=0 } )
-    vim.keymap.set("n", "<leader>di", vim.diagnostic.goto_prev,{ buffer=0 } )
+    vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next,{ buffer=0 } )
+    vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev,{ buffer=0 } )
     vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename,{ buffer=0 } )
   end,
 
@@ -104,8 +104,8 @@ luasnip.config.setup {
     vim.keymap.set("n", "gd", vim.lsp.buf.definition,{ buffer=0 } )
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation,{ buffer=0 } )
     vim.keymap.set("n", "<leader>df", "<cmd>Telescope diagnostics<cr>",{ buffer=0 } )
-    vim.keymap.set("n", "<leader>de", vim.diagnostic.goto_next,{ buffer=0 } )
-    vim.keymap.set("n", "<leader>di", vim.diagnostic.goto_prev,{ buffer=0 } )
+    vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next,{ buffer=0 } )
+    vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev,{ buffer=0 } )
     vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename,{ buffer=0 } )
   end,
 }
