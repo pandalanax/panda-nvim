@@ -20,9 +20,9 @@ with pkgs.vimPlugins; [
   cmp-cmdline-history
   nvim-autopairs
   ansible-vim
-
   conform-nvim
   nvim-treesitter.withAllGrammars # highlighting
+  oil-nvim
   nvim-surround # surround words wit ( " ' or anything really
   vim-fugitive # git inside vim
 ]
