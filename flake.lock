@@ -104,13 +104,30 @@
         "type": "github"
       }
     },
+    "notes": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1707232044,
+        "narHash": "sha256-Q8k7EiCucN9m4YCPDYWOnEbPm0MBZ4vaRvcYVYuxjNM=",
+        "owner": "dhananjaylatkar",
+        "repo": "notes.nvim",
+        "rev": "b7b0472ada19f102d02d1e2be842433ccd8887d7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "dhananjaylatkar",
+        "repo": "notes.nvim",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "flake-compat": "flake-compat",
         "flake-utils": "flake-utils",
         "flexoki-src": "flexoki-src",
         "neovim": "neovim",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "notes": "notes"
       }
     },
     "systems": {

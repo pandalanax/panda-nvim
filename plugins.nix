@@ -23,6 +23,7 @@ with pkgs.vimPlugins; [
   conform-nvim
   nvim-treesitter.withAllGrammars # highlighting
   oil-nvim
+  notes
   nvim-surround # surround words wit ( " ' or anything really
   vim-fugitive # git inside vim
 ]

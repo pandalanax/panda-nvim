@@ -23,6 +23,10 @@
       url = "github:kepano/flexoki-neovim";
       flake = false;
     };
+    notes = {
+      url = "github:dhananjaylatkar/notes.nvim";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {self, ...}:
@@ -34,6 +38,10 @@
           // {
             flexoki = import ./packages/vimPlugins/flexoki.nix {
               src = inputs.flexoki-src;
+              pkgs = prev;
+            };
+            notes = import ./packages/vimPlugins/notes.nvim.nix {
+              src = inputs.notes;
               pkgs = prev;
             };
           };
