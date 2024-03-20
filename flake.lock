@@ -49,22 +49,6 @@
         "type": "github"
       }
     },
-    "flexoki-src": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1707339288,
-        "narHash": "sha256-D8FZXkeoyOzIHjvT/0ubMfLPk691s8xDcAiCagEtMro=",
-        "owner": "kepano",
-        "repo": "flexoki-neovim",
-        "rev": "975654bce67514114db89373539621cff42befb5",
-        "type": "github"
-      },
-      "original": {
-        "owner": "kepano",
-        "repo": "flexoki-neovim",
-        "type": "github"
-      }
-    },
     "neovim": {
       "inputs": {
         "flake-utils": "flake-utils_2",
@@ -124,7 +108,6 @@
       "inputs": {
         "flake-compat": "flake-compat",
         "flake-utils": "flake-utils",
-        "flexoki-src": "flexoki-src",
         "neovim": "neovim",
         "nixpkgs": "nixpkgs",
         "notes": "notes"

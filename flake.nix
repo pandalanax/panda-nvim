@@ -19,11 +19,8 @@
       url = "github:inclyc/flake-compat";
       flake = false;
     };
-    flexoki-src = {
-      url = "github:kepano/flexoki-neovim";
-      flake = false;
-    };
     notes = {
+      # very simple note taking plugin with telescope support. thats it.
       url = "github:dhananjaylatkar/notes.nvim";
       flake = false;
     };
@@ -36,10 +33,6 @@
         vimPlugins =
           final.vimPlugins
           // {
-            flexoki = import ./packages/vimPlugins/flexoki.nix {
-              src = inputs.flexoki-src;
-              pkgs = prev;
-            };
             notes = import ./packages/vimPlugins/notes.nvim.nix {
               src = inputs.notes;
               pkgs = prev;
