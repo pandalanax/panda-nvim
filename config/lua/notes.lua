@@ -12,3 +12,4 @@ end
 require("notes").setup({
 	root = notes_path,
 })
+print("test")
