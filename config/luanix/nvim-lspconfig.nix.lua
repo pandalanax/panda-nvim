@@ -84,6 +84,22 @@ require'lspconfig'.ltex.setup{
 
 }
 
+require'lspconfig'.lua_ls.setup{
+
+  capabilities = capbilities,
+  on_attach = function()
+    vim.keymap.set("n", "k", vim.lsp.buf.hover,{ buffer=0 } )
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition,{ buffer=0 } )
+    vim.keymap.set("n", "gi", vim.lsp.buf.implementation,{ buffer=0 } )
+    vim.keymap.set("n", "<leader>df", "<cmd>Telescope diagnostics<cr>",{ buffer=0 } )
+    vim.keymap.set("n", "<leader>rf", "<cmd>Telescope lsp_references<cr>",{ buffer=0 } )
+    vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next,{ buffer=0 } )
+    vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev,{ buffer=0 } )
+    vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename,{ buffer=0 } )
+  end,
+
+}
+
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 require("nvim-autopairs").setup {}
 local cmp = require('cmp')

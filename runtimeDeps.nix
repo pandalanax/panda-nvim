@@ -24,6 +24,7 @@
   ];
   yamlRuntime = with pkgs; [
     yaml-language-server
+    lua-language-server
     ltex-ls
     stylua
     xmlformat

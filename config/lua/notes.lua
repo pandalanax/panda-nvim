@@ -9,7 +9,6 @@ if output_uname == "Darwin" then
 	notes_path = os.getenv("HOME") .. "/Documents/archive/notes/"
 end
 
-print(notes_path)
 require("notes").setup({
 	root = notes_path,
 })
