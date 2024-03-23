@@ -6,7 +6,6 @@ vim.opt.nu = true
 vim.keymap.set("n", "<leader>pv", "<cmd>Oil<cr>") -- project view
 vim.keymap.set("n", "<leader>nf", "<cmd>NotesFind<cr>") -- project view
 vim.keymap.set("n", "<leader>ng", "<cmd>NotesGrep<cr>") -- project view
-vim.keymap.set("n", "<leader>lg", "<cmd>LazyGit<cr>") -- project view
 vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set("n", "n", "nzzzv") -- keeps cursos in middle when searching
 vim.keymap.set("n", "N", "Nzzzv")
