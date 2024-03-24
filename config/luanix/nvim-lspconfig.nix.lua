@@ -62,7 +62,14 @@ nvim_lsp.ansiblels.setup{
     vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename,{ buffer=0 } )
   end,
 }
-nvim_lsp.tsserver.setup{
+require'lspconfig'.tsserver.setup{
+  cmd = {
+          "${pkgs.nodePackages_latest.typescript-language-server}/bin/typescript-language-server",
+          "--stdio"
+        },
+          -- ,
+          -- "--tsserver-path",
+          -- "/nix/store/cq9s34idhmcwqiy4jb89ghlpr6x6wiz1-typescript-4.5.5/lib/" }
   capabilities = capabilities,
   on_attach = function()
     vim.keymap.set("n", "k", vim.lsp.buf.hover,{ buffer=0 } )
@@ -75,7 +82,11 @@ nvim_lsp.tsserver.setup{
     vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename,{ buffer=0 } )
   end,
 }
-nvim_lsp.svelte.setup{
+require'lspconfig'.svelte.setup{
+  cmd = {
+          "${pkgs.nodePackages_latest.svelte-language-server}/bin/svelteserver",
+          "--stdio"
+        },
   capabilities = capabilities,
   on_attach = function()
     vim.keymap.set("n", "k", vim.lsp.buf.hover,{ buffer=0 } )

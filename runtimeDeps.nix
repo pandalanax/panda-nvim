@@ -34,7 +34,8 @@
     nodejs_21
     nodePackages.prettier
     vscode-langservers-extracted
-    nodePackages.svelte-language-server
-    nodePackages.typescript-language-server
+    nodePackages_latest.svelte-language-server
+    nodePackages_latest.typescript
+    nodePackages_latest.typescript-language-server
   ];
 }
