@@ -28,11 +28,13 @@
     ltex-ls
     stylua
     xmlformat
-    nodePackages.prettier
     ansible-language-server
     ansible
     ansible-lint
     nodejs_21
+    nodePackages.prettier
     vscode-langservers-extracted
+    nodePackages.svelte-language-server
+    nodePackages.typescript-language-server
   ];
 }
