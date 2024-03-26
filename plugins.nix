@@ -22,6 +22,7 @@ with pkgs.vimPlugins; [
   conform-nvim
   nvim-treesitter.withAllGrammars # highlighting
   nvim-treesitter-context
+  bullets-vim
   oil-nvim
   notes
   nvim-surround # surround words wit ( " ' or anything really

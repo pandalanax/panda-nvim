@@ -5,6 +5,7 @@ set expandtab
 set smartindent
 set number
 set cursorline
+set splitbelow
 " set termuicolors
 au BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible
 
