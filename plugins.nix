@@ -21,6 +21,7 @@ with pkgs.vimPlugins; [
   ansible-vim
   conform-nvim
   nvim-treesitter.withAllGrammars # highlighting
+  nvim-treesitter-context
   oil-nvim
   notes
   nvim-surround # surround words wit ( " ' or anything really
