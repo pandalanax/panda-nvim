@@ -18,3 +18,4 @@ conform.setup({
 	},
 	notify_on_error = true,
 })
+require("nvim-ts-autotag").setup()

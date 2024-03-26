@@ -28,5 +28,6 @@ with pkgs.vimPlugins; [
   tmuxjump
   nvim-surround # surround words wit ( " ' or anything really
   vim-fugitive # git inside vim
+  nvim-ts-autotag
   toggleterm-nvim
 ]

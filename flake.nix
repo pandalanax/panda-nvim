@@ -29,6 +29,11 @@
       url = "github:shivamashtikar/tmuxjump.vim";
       flake = false;
     };
+    harpoon2 = {
+      # very simple note taking plugin with telescope support. thats it.
+      url = "github:ThePrimeagen/harpoon/harpoon2";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {self, ...}:
