@@ -25,6 +25,7 @@ with pkgs.vimPlugins; [
   bullets-vim
   oil-nvim
   notes
+  tmuxjump
   nvim-surround # surround words wit ( " ' or anything really
   vim-fugitive # git inside vim
   toggleterm-nvim

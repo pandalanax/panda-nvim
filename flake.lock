@@ -110,7 +110,8 @@
         "flake-utils": "flake-utils",
         "neovim": "neovim",
         "nixpkgs": "nixpkgs",
-        "notes": "notes"
+        "notes": "notes",
+        "tmuxjump": "tmuxjump"
       }
     },
     "systems": {
@@ -125,6 +126,22 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "tmuxjump": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1653736375,
+        "narHash": "sha256-tMwB/U74aawoXaev/ySQXtNWSi28JWxV80hoHyO8KXk=",
+        "owner": "shivamashtikar",
+        "repo": "tmuxjump.vim",
+        "rev": "17a0bda4264c9a69810193e0625e06180dba9339",
+        "type": "github"
+      },
+      "original": {
+        "owner": "shivamashtikar",
+        "repo": "tmuxjump.vim",
         "type": "github"
       }
     }

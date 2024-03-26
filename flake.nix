@@ -24,6 +24,11 @@
       url = "github:dhananjaylatkar/notes.nvim";
       flake = false;
     };
+    tmuxjump = {
+      # very simple note taking plugin with telescope support. thats it.
+      url = "github:shivamashtikar/tmuxjump.vim";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {self, ...}:
@@ -35,6 +40,10 @@
           // {
             notes = import ./packages/vimPlugins/notes.nvim.nix {
               src = inputs.notes;
+              pkgs = prev;
+            };
+            tmuxjump = import ./packages/vimPlugins/tmuxjump.nix {
+              src = inputs.tmuxjump;
               pkgs = prev;
             };
           };
