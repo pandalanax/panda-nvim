@@ -16,8 +16,8 @@ vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]]) -- copy to system clipboard
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- replace current word with
 vim.opt.smartindent = true
-vim.keymap.set("n", "<C-e>", "<C-d>zz")
-vim.keymap.set("n", "<C-i>", "<C-u>zz")
+vim.keymap.set("n", "<C-k>", "<C-d>zz")
+vim.keymap.set("n", "<C-l>", "<C-u>zz")
 vim.keymap.set("n", "<leader>gc", function()
 	require("treesitter-context").go_to_context(vim.v.count1)
 end, { silent = true })
