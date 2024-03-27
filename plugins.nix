@@ -30,5 +30,6 @@ with pkgs.vimPlugins; [
   vim-fugitive # git inside vim
   nvim-ts-autotag
   vim-tmux-navigator
+  vim-gitgutter
   toggleterm-nvim
 ]
