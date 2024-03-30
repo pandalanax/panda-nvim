@@ -17,6 +17,7 @@ with pkgs.vimPlugins; [
   cmp-nvim-lua
   cmp-cmdline
   cmp-cmdline-history
+  cmp-emoji
   nvim-autopairs
   ansible-vim
   conform-nvim

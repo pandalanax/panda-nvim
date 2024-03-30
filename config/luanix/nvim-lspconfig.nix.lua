@@ -145,10 +145,10 @@ local luasnip = require('luasnip')
 nvim_lsp.lemminx.setup{}
 
 -- add friendly snippets to luasnip https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#add-snippets
---[[ require("luasnip.loaders.from_vscode").lazy_load({
-  paths = { "${pkgs.vimPlugins.friendly-snippets}" }
-  --paths = { "/nix/store/3knfdfi64h7kl62bnrx6qfpz95ja22gr-vimplugin-friendly-snippets-2024-02-17/" }
-}) ]]
+-- require("luasnip.loaders.from_vscode").lazy_load({
+--   paths = { "${pkgs.vimPlugins.friendly-snippets}" }
+--   --paths = { "/nix/store/3knfdfi64h7kl62bnrx6qfpz95ja22gr-vimplugin-friendly-snippets-2024-02-17/" }
+-- })
 
 luasnip.config.setup {
   capabilities = capabilities,
@@ -252,6 +252,7 @@ cmp.setup {
     { name = 'luasnip' },
     { name = 'path' },
     { name = 'buffer', keyword_length = 4 },
+    { name = 'emoji' },
   },
 
   experimental = {
