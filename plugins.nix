@@ -9,7 +9,7 @@ with pkgs.vimPlugins; [
   vim-nix
   cmp_luasnip # needed for snippets to work in auto complete
   comment-nvim
-  friendly-snippets
+  #friendly-snippets
   nvim-cmp
   cmp-nvim-lsp
   cmp-path
