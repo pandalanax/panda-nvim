@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "cobalt": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1710653899,
+        "narHash": "sha256-9P22jXy3QHELwpGz6E6oKT4RMPsaTpxxlgMNvUt1mAk=",
+        "owner": "lalitmee",
+        "repo": "cobalt2.nvim",
+        "rev": "7a3e1a77782d5501d8d825a5df05ccc834891903",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lalitmee",
+        "repo": "cobalt2.nvim",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -123,6 +139,7 @@
     },
     "root": {
       "inputs": {
+        "cobalt": "cobalt",
         "flake-compat": "flake-compat",
         "flake-utils": "flake-utils",
         "harpoon2": "harpoon2",

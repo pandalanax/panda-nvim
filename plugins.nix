@@ -19,6 +19,8 @@ with pkgs.vimPlugins; [
   cmp-cmdline-history
   cmp-emoji
   nvim-autopairs
+  colorbuddy-nvim
+  cobalt
   ansible-vim
   conform-nvim
   nvim-treesitter.withAllGrammars # highlighting

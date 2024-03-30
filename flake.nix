@@ -34,6 +34,11 @@
       url = "github:ThePrimeagen/harpoon/harpoon2";
       flake = false;
     };
+    cobalt = {
+      # very simple note taking plugin with telescope support. thats it.
+      url = "github:lalitmee/cobalt2.nvim";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {self, ...}:
@@ -49,6 +54,10 @@
             };
             tmuxjump = import ./packages/vimPlugins/tmuxjump.nix {
               src = inputs.tmuxjump;
+              pkgs = prev;
+            };
+            cobalt = import ./packages/vimPlugins/cobalt.nix {
+              src = inputs.cobalt;
               pkgs = prev;
             };
           };
