@@ -21,6 +21,7 @@ with pkgs.vimPlugins; [
   nvim-autopairs
   colorbuddy-nvim
   cobalt
+  nvimtheme
   ansible-vim
   conform-nvim
   nvim-treesitter.withAllGrammars # highlighting

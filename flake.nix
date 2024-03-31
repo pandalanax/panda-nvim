@@ -39,6 +39,11 @@
       url = "github:lalitmee/cobalt2.nvim";
       flake = false;
     };
+    nvimtheme = {
+      # very simple note taking plugin with telescope support. thats it.
+      url = "github:neanias/everforest-nvim";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {self, ...}:
@@ -58,6 +63,10 @@
             };
             cobalt = import ./packages/vimPlugins/cobalt.nix {
               src = inputs.cobalt;
+              pkgs = prev;
+            };
+            nvimtheme = import ./packages/vimPlugins/nvimtheme.nix {
+              src = inputs.nvimtheme;
               pkgs = prev;
             };
           };

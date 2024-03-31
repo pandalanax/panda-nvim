@@ -137,6 +137,22 @@
         "type": "github"
       }
     },
+    "nvimtheme": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1710847361,
+        "narHash": "sha256-qKyPqkcf420eMbgGNXmMgF3i9GZ71NpoqeK3+Gz0fzc=",
+        "owner": "neanias",
+        "repo": "everforest-nvim",
+        "rev": "5e0e32a569fb464911342f0d421721cc1c94cf25",
+        "type": "github"
+      },
+      "original": {
+        "owner": "neanias",
+        "repo": "everforest-nvim",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "cobalt": "cobalt",
@@ -146,6 +162,7 @@
         "neovim": "neovim",
         "nixpkgs": "nixpkgs",
         "notes": "notes",
+        "nvimtheme": "nvimtheme",
         "tmuxjump": "tmuxjump"
       }
     },
