@@ -32,7 +32,6 @@ with pkgs.vimPlugins; [
   notes
   tmuxjump
   nvim-surround # surround words wit ( " ' or anything really
-  vim-fugitive # git inside vim
   nvim-ts-autotag
   vim-tmux-navigator
   vim-gitgutter
