@@ -25,7 +25,7 @@ vim.keymap.set("v", "E", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "I", ":m '<-2<CR>gv=gv")
 
 vim.opt.wrap = false
-
+require("leap").create_default_mappings()
 vim.keymap.set("n", "<M-n>", "<Cmd>TmuxNavigateLeft<CR>", { silent = true })
 vim.keymap.set("n", "<M-e>", "<Cmd>TmuxNavigateDown<CR>", { silent = true })
 vim.keymap.set("n", "<M-i>", "<Cmd>TmuxNavigateUp<CR>", { silent = true })

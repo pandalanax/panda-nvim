@@ -21,6 +21,7 @@ with pkgs.vimPlugins; [
   nvim-autopairs
   colorbuddy-nvim
   cobalt
+  leap-nvim
   nvimtheme
   ansible-vim
   conform-nvim
