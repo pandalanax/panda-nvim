@@ -36,4 +36,5 @@ with pkgs.vimPlugins; [
   vim-tmux-navigator
   vim-gitgutter
   toggleterm-nvim
+  neogit
 ]
