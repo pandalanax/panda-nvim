@@ -37,4 +37,7 @@ with pkgs.vimPlugins; [
   vim-gitgutter
   toggleterm-nvim
   neogit
+  diffview-nvim
+  plenary-nvim
+  nvim-web-devicons
 ]

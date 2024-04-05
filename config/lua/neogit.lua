@@ -1,6 +1,8 @@
 -- init.lua
 local neogit = require("neogit")
 neogit.setup({})
+local actions = require("diffview.actions")
+require("diffview").setup()
 vim.keymap.set("n", "<leader>gs", ":Neogit kind=vsplit<CR>", { silent = true, noremap = true })
 vim.keymap.set("n", "<leader>gc", ":Neogit commit<CR>", { silent = true, noremap = true })
 vim.keymap.set("n", "<leader>gp", ":Neogit pull<CR>", { silent = true, noremap = true })
