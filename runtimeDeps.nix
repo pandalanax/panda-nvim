@@ -26,6 +26,8 @@
     yaml-language-server
     lua-language-server
     ltex-ls
+    ripgrep
+    git
     stylua
     xmlformat
     ansible-language-server
