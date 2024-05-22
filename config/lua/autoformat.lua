@@ -9,6 +9,7 @@ conform.setup({
 		python = { "black" },
 		xml = { "xmlformat" },
 		go = { "gofumpt" },
+		rust = { "rustfmt" },
 		-- Use a sub-list to run only the first available formatter
 	},
 	format_on_save = {

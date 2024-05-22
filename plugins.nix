@@ -40,4 +40,5 @@ with pkgs.vimPlugins; [
   diffview-nvim
   plenary-nvim
   nvim-web-devicons
+  rustaceanvim
 ]

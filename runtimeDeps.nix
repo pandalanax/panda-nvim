@@ -15,6 +15,10 @@
     nil
     alejandra
     statix
+    rustfmt
+    rust-analyzer
+    rustc
+    cargo
   ];
   dockerRuntime = with pkgs; [
     docker-compose-language-service
